@@ -1,5 +1,5 @@
 {
-  "name": "@zoernert/nr-janitza-meter",
+  "name": "nr-janitza-meter",
   "version": "0.5.0",
   "description": "Reading values via GridVis REST-API of Janitza electricity meters",
   "main": "lib.js",
