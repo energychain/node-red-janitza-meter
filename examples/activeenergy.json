@@ -1,0 +1,71 @@
+[
+    {
+        "id": "92d023479a48b2e4",
+        "type": "tab",
+        "label": "ActiveEnergy",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "23f381088afd8d10",
+        "type": "inject",
+        "z": "92d023479a48b2e4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 220,
+        "wires": [
+            [
+                "ca538ba0c0d72420"
+            ]
+        ]
+    },
+    {
+        "id": "ca538ba0c0d72420",
+        "type": "JanitzaMeter",
+        "z": "92d023479a48b2e4",
+        "name": "ActiveEnergy",
+        "project": "DemoProject",
+        "server": "https://www.gridvis-energy.de/rest/",
+        "value": "1;ActiveEnergy;SUM13",
+        "x": 430,
+        "y": 220,
+        "wires": [
+            [
+                "d00ab33c3a12d5fc"
+            ]
+        ]
+    },
+    {
+        "id": "d00ab33c3a12d5fc",
+        "type": "debug",
+        "z": "92d023479a48b2e4",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 220,
+        "wires": []
+    }
+]

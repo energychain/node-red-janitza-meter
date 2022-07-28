@@ -1,0 +1,41 @@
+<script type="text/javascript">
+    RED.nodes.registerType('JanitzaMeter',{
+        category: 'Meter',
+        color: '#3FADB5',
+        defaults: {
+            name: {value:""},
+            project: {value:"DemoProject", type:"string",required:true},
+            server: {value:"https://www.gridvis-energy.de/rest/",type:"string",required:true},
+            value: {value:"1;ActiveEnergy;SUM13",type:"string",required:true}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "bridge.svg",
+        label: function() {
+            return this.name||"JanitzaMeter";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="JanitzaMeter">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-server"><i class="fa fa-tag"></i> GridVis Server</label>
+        <input type="text" id="node-input-server" placeholder="https://...">
+    </div>
+    <div class="form-row">
+        <label for="node-input-project"><i class="fa fa-tag"></i> Project</label>
+        <input type="text" id="node-input-project" placeholder="Project">
+    </div>
+    <div class="form-row">
+        <label for="node-input-value"><i class="fa fa-tag"></i> Value</label>
+        <input type="text" id="node-input-value" placeholder="Value">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="JanitzaMeter">
+    <p>Settings for Janitza Meter in accordands to GridVis <a href="https://www.gridvis-energy.de/rest/doc/index.html#/data/getOnlineValues_1" target="_blank">REST-API Documentation for the onlinevalues EndPoint</a>.</p>
+</script>
